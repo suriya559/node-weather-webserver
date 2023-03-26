@@ -11,6 +11,8 @@ const publicDirectory = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const paritalPath = path.join(__dirname, '../templates/paritals');
 
+const port = process.env.PORT || 3000;
+
 
 //setup handlerbar engine and view locations
 app.set('view engine', 'hbs');
@@ -82,6 +84,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('server is starting');
+app.listen(port, () => {
+    console.log(`server is starting ${port}`);
 })
